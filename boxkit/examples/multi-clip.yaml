@@ -1,0 +1,32 @@
+version: 1
+output:
+  path: /tmp/boxkit-multi.mp4
+  width: 320
+  height: 240
+  fps: 25
+  preset: ultrafast
+  crf: 30
+audio:
+  use_video_audio: false
+  loudness:
+    enabled: true
+    target_lufs: -16
+    true_peak_dbtp: -1.5
+timeline:
+  clips:
+    - id: a
+      duration: 1.0
+      source:
+        lavfi_video: "testsrc=size=320x240:rate=25:duration=1"
+        lavfi_audio: "sine=frequency=440:sample_rate=48000:duration=1"
+    - id: b
+      duration: 1.0
+      source:
+        lavfi_video: "color=c=blue:size=320x240:rate=25:duration=1"
+        lavfi_audio: "sine=frequency=660:sample_rate=48000:duration=1"
+  transitions:
+    - after: a
+      kind: fade
+      duration: 0.25
+color:
+  saturation: 1.2

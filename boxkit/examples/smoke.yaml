@@ -1,0 +1,22 @@
+version: 1
+output:
+  path: /tmp/boxkit-smoke.mp4
+  width: 320
+  height: 240
+  fps: 25
+  crf: 28
+  preset: ultrafast
+audio:
+  use_video_audio: false
+timeline:
+  clips:
+    - id: intro
+      duration: 1.5
+      source:
+        lavfi_video: "testsrc=size=320x240:rate=25:duration=1.5"
+        lavfi_audio: "sine=frequency=880:sample_rate=48000:duration=1.5"
+overlays:
+  - text: Boxkit smoke
+    start: 0.2
+    end: 1.3
+    fontsize: 24

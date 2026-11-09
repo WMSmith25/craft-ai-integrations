@@ -88,6 +88,13 @@ Read [docs/STATUS.md](docs/STATUS.md) before relying on a provider or tool. In s
   rendering), physical-GPU qualification, performance, and app adoption of the widgets also remain
   unverified.
 
+## Boxkit (headless video edits)
+
+[`boxkit/`](boxkit/) is a Python CLI for Grok Bot–style boxes: declarative YAML/JSON edit specs rendered
+with **ffmpeg** (no GPU, no paid APIs). It reuses delivery loudness conventions from FilmCraft and
+peak-normalize defaults from SoundCraft where practical. See
+[`boxkit/README.md`](boxkit/README.md) and [`boxkit/docs/INVENTORY.md`](boxkit/docs/INVENTORY.md).
+
 ## Licence
 
 MIT or Apache-2.0, at your option (`LICENSE-MIT`, `LICENSE-APACHE`).

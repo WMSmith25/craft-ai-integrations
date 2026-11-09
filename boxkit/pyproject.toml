@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "craft-boxkit"
+version = "0.1.0"
+description = "Headless declarative video edit toolkit for Grok Bot (ffmpeg + Craft repos adapters)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT OR Apache-2.0" }
+dependencies = [
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+boxkit = "boxkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["boxkit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
